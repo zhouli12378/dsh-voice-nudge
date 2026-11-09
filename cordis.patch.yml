@@ -1,0 +1,11 @@
+# dsh-voice-nudge 自带挂载声明。
+- insert:
+    - id: voice-nudge
+      name: dsh-voice-nudge
+      config:
+        enabled: true
+        windowStart: '21:00'
+        windowEnd: '24:00'
+        idleMinutes: 60
+        minGapMinutes: 30
+        voice: zh-CN-XiaoxiaoNeural
