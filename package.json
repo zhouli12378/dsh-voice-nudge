@@ -1,0 +1,48 @@
+{
+    "name":  "dsh-voice-nudge",
+    "version":  "0.1.0",
+    "description":  "夜深了还没人说话，就让 AI 主动发一句语音来找你。时间窗、静默时长、最小间隔都可配，带设置页。",
+    "type":  "module",
+    "main":  "index.js",
+    "exports":  {
+                    ".":  "./index.js",
+                    "./client":  "./client.js",
+                    "./cordis.patch.yml":  "./cordis.patch.yml",
+                    "./package.json":  "./package.json"
+                },
+    "files":  [
+                  "index.js",
+                  "client.js",
+                  "tts.js",
+                  "cordis.patch.yml",
+                  "README.md"
+              ],
+    "keywords":  [
+                     "dsh",
+                     "dsh-plugin",
+                     "deepseek-harness",
+                     "tts",
+                     "proactive",
+                     "voice"
+                 ],
+    "license":  "MIT",
+    "engines":  {
+                    "node":  "\u003e=22"
+                },
+    "dependencies":  {
+                         "@andresaya/edge-tts":  "^1.9.1"
+                     },
+    "dsh":  {
+                "bundle":  {
+                               "patch":  "./cordis.patch.yml"
+                           },
+                "client":  {
+                               "platform":  "web",
+                               "inject":  [
+                                              "@deepseek-ai/dsh-client-runtime",
+                                              "@deepseek-ai/dsh-client-ui-settings",
+                                              "@deepseek-ai/dsh-client-ui-settings-plugins"
+                                          ]
+                           }
+            }
+}
